@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 	"github.com/segmentio/kafka-go"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -181,10 +180,6 @@ func CORSMiddleware() gin.HandlerFunc {
 }
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 	// Establish connection with MongoDB
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(MONGODBURL))
 	if err != nil {
