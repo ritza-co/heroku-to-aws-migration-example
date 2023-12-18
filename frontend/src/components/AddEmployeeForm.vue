@@ -13,7 +13,7 @@ export default {
     },
     methods:{
         submitForm(){
-            this.axios.post(import.meta.env.VITE_API_URL + '/employees', this.form)
+            this.axios.post('/employees', this.form)
                  .then((res) => {
                      //Perform Success Action
                      alert("Employee Added Successfully")

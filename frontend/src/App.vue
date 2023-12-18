@@ -1,5 +1,6 @@
 <script >
 import AddEmployeeForm from './components/AddEmployeeForm.vue';
+
 export default {
     data() {
         return {
@@ -23,7 +24,7 @@ export default {
             });
         },
         deleteEmployee(id) {
-            const apiUrl = import.meta.env.VITE_API_URL + '/employees/' + id;
+            const apiUrl = '/employees/' + id;
             // Using Axios to fetch data
             this.axios
                 .delete(apiUrl)
