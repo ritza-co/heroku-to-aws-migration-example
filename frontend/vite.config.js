@@ -8,6 +8,9 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: process.env.PORT || 3000,
+    proxy: {
+      "/employees": "http://localhost:5001/",
+    },
   },
   resolve: {
     alias: {

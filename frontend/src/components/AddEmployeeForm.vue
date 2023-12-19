@@ -15,8 +15,16 @@ export default {
         submitForm(){
           const apiUrl = '/employees';
             // Using Axios to fetch data
-          const url = "https://cors-anywhere.herokuapp.com/" + import.meta.env.VITE_API_URL + apiUrl
 
+            let url = '';
+            const viteApiUrl = import.meta.env.VITE_API_URL;
+            if (viteApiUrl.includes('localhost')) {
+              url = apiUrl;
+            } else {
+              url = "https://cors-anywhere.herokuapp.com/" + viteApiUrl + apiUrl;
+            }
+          
+          this.axios.defaults.headers.common['X-Requested-With'] = 'origin';
             this.axios.post(url, this.form)
                  .then((res) => {
                      //Perform Success Action
