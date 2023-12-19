@@ -47,7 +47,7 @@ export default {
             // set headers first
             this.axios.defaults.headers.common['X-Requested-With'] = 'origin';
             this.axios
-                .delete(url)
+                .delete(url + '/' + id)
                 .then((response) => {
                 this.employees = response.data;
                 location.reload();
