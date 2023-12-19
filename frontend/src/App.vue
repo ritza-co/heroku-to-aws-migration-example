@@ -14,8 +14,10 @@ export default {
         fetchEmployeeData() {
             const apiUrl = '/employees';
             // Using Axios to fetch data
+            const url = import.meta.env.VITE_API_URL + apiUrl;
+
             this.axios
-                .get(apiUrl)
+                .get(url)
                 .then((response) => {
                 this.employees = response.data;
             })
