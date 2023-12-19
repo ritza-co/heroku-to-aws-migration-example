@@ -16,6 +16,7 @@ export default {
             // Using Axios to fetch data
             const url = import.meta.env.VITE_API_URL + apiUrl;
 
+            console.log('url', url)
             this.axios
                 .get(url)
                 .then((response) => {
