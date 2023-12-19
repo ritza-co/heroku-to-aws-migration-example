@@ -13,7 +13,11 @@ export default {
     },
     methods:{
         submitForm(){
-            this.axios.post('/employees', this.form)
+          const apiUrl = '/employees';
+            // Using Axios to fetch data
+          const url = "https://cors-anywhere.herokuapp.com/" + import.meta.env.VITE_API_URL + apiUrl
+
+            this.axios.post(url, this.form)
                  .then((res) => {
                      //Perform Success Action
                      alert("Employee Added Successfully")

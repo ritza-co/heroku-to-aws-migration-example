@@ -14,9 +14,8 @@ export default {
         fetchEmployeeData() {
             const apiUrl = '/employees';
             // Using Axios to fetch data
-            const url = import.meta.env.VITE_API_URL + apiUrl;
+            const url = "https://cors-anywhere.herokuapp.com/" + import.meta.env.VITE_API_URL + apiUrl;
 
-            console.log('url', url)
             this.axios
                 .get(url)
                 .then((response) => {
@@ -27,10 +26,11 @@ export default {
             });
         },
         deleteEmployee(id) {
-            const apiUrl = '/employees/' + id;
+          const apiUrl = '/employees';
             // Using Axios to fetch data
+            const url = "https://cors-anywhere.herokuapp.com/" + import.meta.env.VITE_API_URL + apiUrl;
             this.axios
-                .delete(apiUrl)
+                .delete(url)
                 .then((response) => {
                 this.employees = response.data;
                 location.reload();
