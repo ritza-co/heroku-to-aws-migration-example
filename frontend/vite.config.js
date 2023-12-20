@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     port: process.env.PORT || 3000,
     proxy: {
-      "/employees": "http://localhost:5001/",
+      "/employees": "http://localhost:5000/",
     },
   },
   resolve: {
